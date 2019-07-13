@@ -1,12 +1,15 @@
 %% -*- mode: erlang; erlang-indent-level: 4 -*-
 -module(deq).
 
--export([popl/1, popr/1, pushl/2, pushr/2, length/1]).
+-export([new/0, popl/1, popr/1, pushl/2, pushr/2, length/1]).
 
 -record(deq,
        {left = [] :: list(),
         right = [] :: list(),
         length = 0 :: integer()}).
+
+new() ->
+    #deq{}.
 
 length(#deq{length = Len}) ->
     Len;
